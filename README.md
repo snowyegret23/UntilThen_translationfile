@@ -1,19 +1,16 @@
-# backpack-battles-korean
+# UntilThen-translationfile
 
-ChatGPT로 초벌 번역 후, 일부 어색한 번역을 수정하였습니다.
+# 기초 준비사항
 
-# 패치 적용법
+* `pip install smaz-py3`
+* `pip install dotenv`
+* `1. translation_fileextract`의 `SET "GAME_HOME="` 부분을 본인의 게임 경로로 변경
 
-* 우측 Nav의 Releases에서 최신버전 다운, 압축 해제
-* (게임 설치 경로가 `C:\Program Files (x86)\Steam\steamapps\common\Backpack Battles Demo`가 아닐 경우) patch.bat을 메모장으로 열어 경로 변경
-* patch-zh.bat 혹은 patch-en.bat 클릭
-* (patch-zh.bat을 클릭했을 경우) 게임 시작 => 설정 => 중국어 선택
-* (patch-en.bat을 클릭했을 경우) 게임 시작 => 설정 => 영어 선택
 
-# 번역 생성 방법
+# 번역 생성, 적용 방법
 
-* `extract.bat` 실행하여 시트 추출
-* .env파일에 `OPEN_AI_KEY` 환경변수 설정
-* `translate.py translate` 실행하여 번역파일 생성
-* `translate.py apply` 실행하여 번역파일 적용
-* `patch.bat` 실행
+* 1. `1. translation_fileextract.bat`를 실행하여 `Patchdata\assets\locales`에 `text.en.translation` 생성
+* 2. `2. translation_csvextract.bat`를 실행하여 `text.en.translation.csv` 생성
+* 3. `text.en.translation.csv`를 열어서 `dst`부분에 번역문을 기입
+* 4. `3. translation_csvimport.bat`를 실행해서 번역문 import
+* 5. 생성된 `applied` 폴더에 있는 `text.en.translation` 파일을 게임에 삽입
